@@ -1,5 +1,4 @@
 import random
-# from replit import clear
 from art import logo
 
 def deal_card():
@@ -13,7 +12,7 @@ def calculate_score(cards):
 
   if sum(cards) == 21 and len(cards) == 2:
     return 0
-  #Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
+
   if 11 in cards and sum(cards) > 21:
     cards.remove(11)
     cards.append(1)
@@ -72,7 +71,7 @@ def play_game():
       else:
         is_game_over = True
 
-  #Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
+
   while computer_score != 0 and computer_score < 17:
     computer_cards.append(deal_card())
     computer_score = calculate_score(computer_cards)
@@ -82,5 +81,4 @@ def play_game():
   print(compare(user_score, computer_score))
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
-
-  play_game()
+    play_game()
